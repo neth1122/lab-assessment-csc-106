@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact | Student Portfolio</title>
+    <link rel="stylesheet" href="style/index.css">
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Me</a>
+          <a href="projects.html">Projects</a>
+          <a href="planner.html">Academic Planner</a>
+          <a href="contact.html" class="active">Contact</a>
+        </nav>
+
+        <div class="hero-content">
+          <img
+            class="profile-photo"
+            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Crect width='360' height='360' rx='40' fill='%230f172a'/%3E%3Ccircle cx='180' cy='150' r='90' fill='%23f8fafc'/%3E%3Cpath d='M90 310c16-60 52-95 90-95s74 35 90 95' fill='%23f8fafc'/%3E%3C/svg%3E"
+            alt="Student portrait"
+          >
+          <div class="intro">
+            <p class="eyebrow">Contact</p>
+            <h1>Let’s Connect</h1>
+            <p class="welcome">Feel free to reach out with questions, opportunities, or collaboration ideas.</p>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-grid">
+        <section class="card">
+          <h2>Send a Message</h2>
+          <form id="contactForm" class="contact-form">
+            <input id="name" name="name" type="text" placeholder="Name" aria-label="Name">
+            <input id="email" name="email" type="email" placeholder="Email Address" aria-label="Email Address">
+            <input id="phone" name="phone" type="tel" placeholder="Phone Number" aria-label="Phone Number">
+            <textarea id="message" name="message" rows="5" placeholder="Message" aria-label="Message"></textarea>
+            <button type="submit">Submit</button>
+          </form>
+          <p id="contactMessage" class="form-message"></p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>© Copyright 2025 MIVA Open University All Rights Reserved</p>
+      </footer>
+    </div>
+
+    <script>
+      const contactForm = document.getElementById('contactForm');
+      const contactMessage = document.getElementById('contactMessage');
+
+      contactForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !email || !phone || !message) {
+          contactMessage.textContent = 'All fields are required.';
+          contactMessage.className = 'form-message error';
+          return;
+        }
+
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email)) {
+          contactMessage.textContent = 'Please enter a valid email address.';
+          contactMessage.className = 'form-message error';
+          return;
+        }
+
+        if (!/^\d+$/.test(phone)) {
+          contactMessage.textContent = 'Phone number must contain only digits.';
+          contactMessage.className = 'form-message error';
+          return;
+        }
+
+        contactMessage.textContent = 'Your message has been sent successfully.';
+        contactMessage.className = 'form-message success';
+        contactForm.reset();
+      });
+    </script>
+  </body>
+</html>
