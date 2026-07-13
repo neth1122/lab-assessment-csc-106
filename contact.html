@@ -50,41 +50,6 @@
       </footer>
     </div>
 
-    <script>
-      const contactForm = document.getElementById('contactForm');
-      const contactMessage = document.getElementById('contactMessage');
-
-      contactForm.addEventListener('submit', function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const message = document.getElementById('message').value.trim();
-
-        if (!name || !email || !phone || !message) {
-          contactMessage.textContent = 'All fields are required.';
-          contactMessage.className = 'form-message error';
-          return;
-        }
-
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailPattern.test(email)) {
-          contactMessage.textContent = 'Please enter a valid email address.';
-          contactMessage.className = 'form-message error';
-          return;
-        }
-
-        if (!/^\d+$/.test(phone)) {
-          contactMessage.textContent = 'Phone number must contain only digits.';
-          contactMessage.className = 'form-message error';
-          return;
-        }
-
-        contactMessage.textContent = 'Your message has been sent successfully.';
-        contactMessage.className = 'form-message success';
-        contactForm.reset();
-      });
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
