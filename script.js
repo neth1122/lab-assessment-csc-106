@@ -74,6 +74,23 @@ document.addEventListener('DOMContentLoaded', () => {
     renderTasks();
   }
 
+  const introAudioButton = document.getElementById('introAudioButton');
+  if (introAudioButton) {
+    if ('speechSynthesis' in window) {
+      introAudioButton.addEventListener('click', () => {
+        const introText = "Hi, I'm Nethanel Enedeh, a student passionate about web development, creative problem-solving, and building user-centered digital experiences.";
+        const utterance = new SpeechSynthesisUtterance(introText);
+        utterance.rate = 1;
+        utterance.pitch = 1;
+        speechSynthesis.cancel();
+        speechSynthesis.speak(utterance);
+      });
+    } else {
+      introAudioButton.textContent = 'Audio not supported in this browser';
+      introAudioButton.disabled = true;
+    }
+  }
+
   if (contactForm && contactMessage) {
     contactForm.addEventListener('submit', (event) => {
       event.preventDefault();
