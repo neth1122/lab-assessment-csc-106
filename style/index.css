@@ -74,6 +74,10 @@ body {
   max-width: 560px;
 }
 
+.audio-transcript {
+  display: none;
+}
+
 .eyebrow {
   margin: 0 0 8px;
   color: var(--accent);
