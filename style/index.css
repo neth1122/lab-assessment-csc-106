@@ -74,9 +74,6 @@ body {
   max-width: 560px;
 }
 
-.audio-transcript {
-  display: none;
-}
 
 .eyebrow {
   margin: 0 0 8px;
@@ -252,11 +249,38 @@ main {
   text-align: left;
 }
 
+.media-section {
+  display: grid;
+  gap: 20px;
+  margin-top: 12px;
+}
+
 .media-video {
   width: 100%;
   max-width: 640px;
   border-radius: 14px;
-  margin-top: 12px;
+}
+
+.media-audio-player {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 640px;
+  background: #f8fafc;
+  border: 1px solid #dce4f0;
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.media-audio-player .audio-caption {
+  margin: 0;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.media-audio-player audio {
+  width: 100%;
+  outline: none;
 }
 
 .social-links {

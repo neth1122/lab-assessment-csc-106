@@ -21,7 +21,7 @@
         <div class="hero-content">
           <img
             class="profile-photo"
-            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='360' height='360' viewBox='0 0 360 360'%3E%3Crect width='360' height='360' rx='40' fill='%230f172a'/%3E%3Ccircle cx='180' cy='150' r='90' fill='%23f8fafc'/%3E%3Cpath d='M90 310c16-60 52-95 90-95s74 35 90 95' fill='%23f8fafc'/%3E%3C/svg%3E"
+            src="assets/profile.jpg"
             alt="Student portrait"
           >
           <div class="intro">
@@ -79,14 +79,18 @@
         <section class="card">
           <h2>Featured Media</h2>
           <p>Here is a short introduction to my work and interests.</p>
-          <video controls loop poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" class="media-video">
-            <source src="assets/mixkit-a-software-developer-working-and-drinking-coffee-1749-hd-ready.mp4"  type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <div class="media-audio">
-            <p class="audio-caption">Listen to a short audio introduction about me.</p>
-            <button id="introAudioButton" type="button">Play audio introduction</button>
-            <p class="audio-transcript">“Hi, I'm Nethanel Enedeh, a student passionate about web development, creative problem-solving, and building user-centered digital experiences.”</p>
+          <div class="media-section">
+            <video controls loop poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=80" class="media-video">
+              <source src="assets/mixkit-a-software-developer-working-and-drinking-coffee-1749-hd-ready.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <div class="media-audio-player">
+              <p class="audio-caption">Play the introduction audio:</p>
+              <audio controls>
+                <source src="assets/intro.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+              </audio>
+            </div>
           </div>
         </section>
       </main>
